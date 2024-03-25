@@ -741,7 +741,7 @@ func isValidGroupName(group string) error {
 	if strings.TrimSpace(group) == "" {
 		return fmt.Errorf("group name can't be empty or contain only whitespaces")
 	}
-	validGroupName := regexp.MustCompile(`^[a-z0-9\-_:.\/ ]+$`)
+	validGroupName := regexp.MustCompile(`^[a-z0-9\-_:.\/]+$`)
 	if !validGroupName.MatchString(group) {
 		return fmt.Errorf("group name should contain only lowercase letters, digits, -, _, :, ., /")
 	}
